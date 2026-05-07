@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-/* ANIMAÇÃO SCROLL */
+/* ANIMAÇÃO */
 .hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -33,17 +33,19 @@ body {
 }
 
 .logo {
-    width: 120px;
+    width: 130px;
     border-radius: 50%;
     background: white;
-    padding: 5px;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* CARDS */
+/* SEÇÕES */
 .section {
     padding: 25px;
 }
 
+/* CARDS */
 .card {
     background: white;
     border-radius: 15px;
@@ -64,7 +66,23 @@ body {
     margin: 10px;
 }
 
-/* BOTÃO WHATSAPP */
+/* BOTÃO PRINCIPAL */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #b76e79;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.button:hover {
+    background: #9c5a63;
+}
+
+/* BOTÃO FLUTUANTE */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -74,17 +92,6 @@ body {
     padding: 15px;
     border-radius: 50%;
     font-size: 20px;
-    text-decoration: none;
-}
-
-/* BOTÃO PRINCIPAL */
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #b76e79;
-    color: white;
-    border-radius: 25px;
     text-decoration: none;
 }
 </style>
@@ -102,17 +109,20 @@ body {
 <div class="section hidden">
     <h2>💅 Nossos cuidados</h2>
 
-    <div class="card">🧼 Higienização das mãos</div>
-    <div class="card">🧤 Uso de EPIs</div>
-    <div class="card">🔧 Esterilização</div>
-    <div class="card">🪑 Limpeza do ambiente</div>
-    <div class="card">🗑️ Descarte correto</div>
+    <div class="card">🧼 Higienização das mãos antes e após cada atendimento</div>
+    <div class="card">🧤 Uso de luvas descartáveis e EPIs</div>
+    <div class="card">🔧 Esterilização completa dos instrumentos</div>
+    <div class="card">🪑 Limpeza do ambiente após cada cliente</div>
+    <div class="card">🗑️ Descarte correto de resíduos</div>
 
-    <a class="button" href="https://wa.me/55SEUNUMERO">Agendar atendimento</a>
+    <a class="button" href="https://wa.me/5554996748810?text=Olá,%20gostaria%20de%20agendar%20um%20horário">
+        📲 Agendar atendimento
+    </a>
 </div>
 
 <div class="section hidden">
     <h2>✨ Trabalhos realizados</h2>
+
     <div class="gallery">
         <img src="https://via.placeholder.com/300">
         <img src="https://via.placeholder.com/300">
@@ -120,7 +130,10 @@ body {
     </div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/55SEUNUMERO">💬</a>
+<!-- BOTÃO WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5554996748810?text=Olá,%20gostaria%20de%20agendar%20um%20horário">
+💬
+</a>
 
 <script>
 const elements = document.querySelectorAll('.hidden');
