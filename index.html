@@ -9,11 +9,23 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background: #fff;
+    background: linear-gradient(120deg, #fff, #fdf2f4);
     color: #333;
     text-align: center;
 }
 
+/* ANIMAÇÃO */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HEADER */
 .header {
     background: linear-gradient(135deg, #b76e79, #f7d1d6);
     padding: 40px 20px;
@@ -23,62 +35,74 @@ body {
 .logo {
     width: 120px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    background: white;
+    padding: 5px;
 }
 
-h1 {
-    margin: 0;
-    font-size: 28px;
-}
-
+/* SEÇÃO */
 .section {
     padding: 25px;
 }
 
+/* CARDS */
 .card {
-    background: #fff;
+    background: white;
     border-radius: 15px;
     padding: 18px;
     margin: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    font-size: 16px;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.highlight {
-    color: #b76e79;
-    font-weight: bold;
+/* GALERIA */
+.gallery img {
+    width: 90%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin: 10px;
 }
 
+/* BOTÃO PRINCIPAL */
 .button {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
     background: #b76e79;
     color: white;
-    text-decoration: none;
     border-radius: 25px;
+    text-decoration: none;
     font-weight: bold;
 }
 
-.footer {
-    background: #b76e79;
+/* BOTÃO WHATSAPP FLUTUANTE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
     color: white;
     padding: 15px;
-    font-size: 14px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<div class="header hidden">
+    <img src="logo.jpeg" class="logo">
     <h1>Espaço Sister</h1>
     <p>Vanice Oliveira</p>
     <p>✨ Beleza com segurança e cuidado ✨</p>
 </div>
 
-<div class="section">
-    <h2 class="highlight">💅 Nossos cuidados</h2>
+<div class="section hidden">
+    <h2>💅 Nossos cuidados</h2>
 
     <div class="card">🧼 Higienização das mãos antes e após cada atendimento</div>
     <div class="card">🧤 Uso de luvas descartáveis e EPIs</div>
@@ -86,12 +110,35 @@ h1 {
     <div class="card">🪑 Limpeza do ambiente após cada cliente</div>
     <div class="card">🗑️ Descarte correto de resíduos</div>
 
-    <a class="button" href="https://wa.me/555496748810">📲 Agendar pelo WhatsApp</a>
+    <a class="button" href="https://wa.me/5554996748810?text=Olá,%20gostaria%20de%20agendar%20um%20horário">📲 Agendar atendimento</a>
 </div>
 
-<div class="footer">
-    <p>📍 Sua saúde e bem-estar são nossa prioridade</p>
+<div class="section hidden">
+    <h2>✨ Trabalhos realizados</h2>
+
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300">
+        <img src="https://via.placeholder.com/300">
+        <img src="https://via.placeholder.com/300">
+    </div>
 </div>
+
+<!-- BOTÃO FLUTUANTE -->
+<a class="whatsapp" href="https://wa.me/5554996748810?text=Olá,%20gostaria%20de%20agendar%20um%20horário">💬</a>
+
+<script>
+const elements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
